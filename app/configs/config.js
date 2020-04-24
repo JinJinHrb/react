@@ -1,6 +1,6 @@
 
 export const set = 'set$'
-export const brandName = 'React' // slogan
+export const brandName = 'React Is Hard' // slogan
 
 // 开发环境默认配置
 let _serverIp = 'http://192.168.1.222'

@@ -17,6 +17,7 @@ export default class app extends Component {
     w: PropTypes.number,
     h: PropTypes.number,
     pixSize: PropTypes.number,
+    alphaThreshold: PropTypes.number,
     pointSizeMin: PropTypes.number,
   };
 
@@ -26,6 +27,7 @@ export default class app extends Component {
     w: 1038,
     h: 280,
     pixSize: 20,
+    alphaThreshold: 150,
     pointSizeMin: 8,
   };
 
@@ -39,6 +41,7 @@ export default class app extends Component {
 
   componentDidMount() {
     // this.dom = ReactDOM.findDOMNode(this)
+    console.log(new Date(), 'logo.js #42', this.props)
     this.dom = this.componentDom
     this.createPointData();
   }
@@ -67,9 +70,11 @@ export default class app extends Component {
   setDataToDom(data, w, h) {
     this.pointArray = [];
     const number = this.props.pixSize;
+    const alphaThreshold = this.props.alphaThreshold || 50;
     for (let i = 0; i < w; i += number) {
       for (let j = 0; j < h; j += number) {
-        if (data[((i + (j * w)) * 4) + 3] > 150) {
+        const pos = ((i + (j * w)) * 4) + 3; // alpha 通道
+        if (data[pos] > alphaThreshold) {
           this.pointArray.push({ x: i, y: j });
         }
       }
