@@ -23,7 +23,7 @@ const webpackConfigDev = {
     // 定义环境变量为开发环境
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development'),
-      IS_DEVELOPMETN: true,
+      IS_DEVELOPMENT: true,
     }),
     // 将打包后的资源注入到html文件内    
     new HtmlWebpackPlugin({

@@ -20,8 +20,8 @@ const webpackConfigProd = {
   plugins: [
     // 定义环境变量为开发环境
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('testing'),
-      IS_DEVELOPMETN: false,
+      'process.env.NODE_ENV': testing,
+      IS_DEVELOPMENT: false,
     }),
     // 将打包后的资源注入到html文件内    
     new HtmlWebpackPlugin({

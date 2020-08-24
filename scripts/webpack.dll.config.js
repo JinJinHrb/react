@@ -35,7 +35,7 @@ module.exports = {
     // 定义环境变量为开发环境
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
-      IS_DEVELOPMETN: true,
+      IS_DEVELOPMENT: true,
     }),
    
     // 使用插件 DllPlugin
