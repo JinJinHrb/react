@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router, Route, IndexRoute, hashHistory/* , Redirect */ } from 'react-router'
+import { Router, Route, IndexRoute, hashHistory /* , Redirect */ } from 'react-router'
 import { isLogin } from '@configs/common'
 import { set } from '@config'
 
@@ -7,6 +7,7 @@ import * as base from '@pages/base' // 基础
 import * as sysSet from '@pages/set' // 设置中心-系统设置
 import * as menu from '@pages/menu' // 菜单
 
+// isLogin(nextState, replaceState)
 export default () => (
   <Router history={hashHistory}>
     <Route path="/" component={base.app} onEnter={isLogin}>

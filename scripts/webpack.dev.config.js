@@ -6,12 +6,18 @@ const webpackConfigBase = require('./webpack.base.config')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin }  = require('clean-webpack-plugin')
 const os = require('os');
-let selfIp;
-try {
-  selfIp = os.networkInterfaces()['WLAN'][1].address;
+let selfIp = 'localhost';
+/* try {
+    const networkInterfaces = os.networkInterfaces();
+    // console.log('networkInterfaces:', networkInterfaces)
+    const en0Arr = os.networkInterfaces()['en0'].filter(a => a.family === 'IPv4')
+    console.log('en0Arr:', en0Arr)
+    selfIp = en0arr[0].address;
+    console.log('selfIp:', selfIp)
+    // selfIp = os.networkInterfaces()['WLAN'][1].address;
 } catch (e) {
-  selfIp = 'localhost'
-}
+    selfIp = 'localhost'
+} */
 
 const PORT = 8888
 function resolve(relatedPath) {
